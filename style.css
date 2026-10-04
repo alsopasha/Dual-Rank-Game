@@ -560,13 +560,3 @@ button:focus-visible {
     transition: none !important;
   }
 }
-
-#btn-engine[aria-pressed="true"]::after {
-  content: "";
-  display: inline-block;
-  width: 0.42em;
-  height: 0.42em;
-  margin-left: 0.45em;
-  border-radius: 50%;
-  background: currentColor;
-}
