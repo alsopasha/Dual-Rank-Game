@@ -561,7 +561,7 @@ button:focus-visible {
   }
 }
 
-#btn-engine.busy::after {
+#btn-engine[aria-pressed="true"]::after {
   content: "";
   display: inline-block;
   width: 0.42em;
@@ -569,10 +569,4 @@ button:focus-visible {
   margin-left: 0.45em;
   border-radius: 50%;
   background: currentColor;
-  animation: pulse 0.9s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 0.25; }
-  50% { opacity: 1; }
 }
