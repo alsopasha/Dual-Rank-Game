@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0083B7">
+  <title>Dual-Rank</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="page">
+    <header class="mast">
+      <div class="brand">
+        <h1>Dual-Rank</h1>
+        <p>5 × 5</p>
+      </div>
+      <div class="hud">
+        <div class="family two" id="h-two"><span class="b">2</span><span class="e">—</span></div>
+        <div class="family three" id="h-three"><span class="b">3</span><span class="e">—</span></div>
+        <div class="clocks">
+          <div><span>moves</span><strong id="moves">0</strong></div>
+          <div><span>score</span><strong id="score">0</strong></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="mode" role="group" aria-label="who plays">
+        <button type="button" id="btn-you" aria-pressed="true">Play</button>
+        <button type="button" id="btn-engine" aria-pressed="false">Engine</button>
+      </div>
+      <button type="button" id="btn-new">New</button>
+    </div>
+
+    <div class="stage">
+      <div class="play">
+        <div class="arena" id="arena">
+          <button type="button" class="nudge" data-dir="0" aria-label="up">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v16M12 4l-6.2 6.2M12 4l6.2 6.2" />
+            </svg>
+          </button>
+          <button type="button" class="nudge" data-dir="3" aria-label="left">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M4 12h16M4 12l6.2-6.2M4 12l6.2 6.2" />
+            </svg>
+          </button>
+
+          <div class="board">
+            <div class="grid" id="grid"></div>
+            <div id="tiles"></div>
+            <div class="veil" id="game-message">
+              <p></p>
+              <button type="button" class="retry">Again</button>
+            </div>
+          </div>
+
+          <button type="button" class="nudge" data-dir="1" aria-label="right">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 12H4M20 12l-6.2-6.2M20 12l-6.2 6.2" />
+            </svg>
+          </button>
+          <button type="button" class="nudge" data-dir="2" aria-label="down">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 20V4M12 20l-6.2-6.2M12 20l6.2-6.2" />
+            </svg>
+          </button>
+        </div>
+        <p class="hint" id="hint">arrows · WASD · swipe</p>
+      </div>
+
+      <aside class="console" id="console">
+        <div class="towers">
+          <div class="tower two">
+            <div class="lab"><span class="b">2</span><span class="goal">/10</span></div>
+            <div class="rail"><span class="fill" id="t2-fill"></span></div>
+          </div>
+          <div class="tower three">
+            <div class="lab"><span class="b">3</span><span class="goal">/10</span></div>
+            <div class="rail"><span class="fill" id="t3-fill"></span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
