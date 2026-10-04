@@ -81,7 +81,7 @@ button:focus-visible {
 
 .page {
   width: min(920px, 100%);
-  padding: 1.6rem 1.2rem 2rem;
+  padding: 1.6rem 1.2rem 3.4rem;
   position: relative;
   z-index: 1;
 }
@@ -497,11 +497,17 @@ button:focus-visible {
 }
 
 .credit {
-  margin: 1.75rem 0 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 1.15rem;
+  margin: 0;
   text-align: center;
   font-size: 0.68rem;
   letter-spacing: 0.04em;
   color: var(--mute);
+  pointer-events: none;
+  z-index: 2;
 }
 
 @media (max-width: 860px) {
@@ -543,7 +549,7 @@ button:focus-visible {
   }
 
   .page {
-    padding: 1rem 0.7rem 1.6rem;
+    padding: 1rem 0.7rem 3.2rem;
   }
 
   .family .b { font-size: 1.65rem; }
